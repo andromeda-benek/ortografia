@@ -215,15 +215,14 @@ kura`;
 
   async function loadWords() {
     elements.sessionButtons.forEach((button) => { button.disabled = true; });
+    elements.loadStatus.hidden = false;
     let text;
-    let fallbackUsed = false;
     try {
       const response = await fetch('./data/slowa.txt', { cache: 'no-store' });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       text = await response.text();
     } catch {
       text = FALLBACK_WORDS;
-      fallbackUsed = true;
     }
 
     const words = logic.parseWordList(text);
@@ -235,9 +234,8 @@ kura`;
     }
 
     elements.sessionButtons.forEach((button) => { button.disabled = false; });
-    elements.loadStatus.textContent = fallbackUsed
-      ? `Gotowe: ${allTasks.length} zadań (awaryjna lista wbudowana).`
-      : `Gotowe: ${allTasks.length} różnych zadań.`;
+    elements.loadStatus.textContent = '';
+    elements.loadStatus.hidden = true;
   }
 
   elements.sessionButtons.forEach((button) => {

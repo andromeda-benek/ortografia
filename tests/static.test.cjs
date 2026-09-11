@@ -22,6 +22,14 @@ test('statyczna strona udostępnia wybór sesji, trening, podsumowanie i wykres'
   assert.doesNotMatch(html, /type="module"/);
 });
 
+test('ekran startowy nie pokazuje usuniętych tekstów pomocniczych ani komunikatu gotowości', () => {
+  const source = `${read('index.html')}\n${read('app/browser.js')}`;
+
+  assert.doesNotMatch(source, /Nauka przez krótkie serie/i);
+  assert.doesNotMatch(source, /Uzupełniaj słowa i obserwuj swoje postępy\./i);
+  assert.doesNotMatch(source, /Gotowe:/i);
+});
+
 test('kontroler pobiera edytowalną listę słów i używa wersjonowanego localStorage', () => {
   const browser = read('app/browser.js');
 

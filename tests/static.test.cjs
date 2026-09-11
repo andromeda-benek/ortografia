@@ -30,6 +30,14 @@ test('ekran startowy nie pokazuje usuniętych tekstów pomocniczych ani komunika
   assert.doesNotMatch(source, /Gotowe:/i);
 });
 
+test('po odpowiedzi pokazuje pełne słowo, a pod nim komentarz oceniający odpowiedź', () => {
+  const browser = read('app/browser.js');
+
+  assert.match(browser, /elements\.word\.textContent = task\.word;/);
+  assert.match(browser, /Dobrze! To poprawna odpowiedź\./);
+  assert.match(browser, /Niestety, odpowiedź jest błędna\./);
+});
+
 test('kontroler pobiera edytowalną listę słów i używa wersjonowanego localStorage', () => {
   const browser = read('app/browser.js');
 

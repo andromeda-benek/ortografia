@@ -23,7 +23,7 @@ Zapewnić prostą, statyczną stronę do treningu polskiej ortografii na podstaw
 - W pojedynczym zadaniu ukryte jest dokładnie jedno wystąpienie, oznaczone jednym znakiem podkreślenia (`_`).
 - Dostępne są dokładnie dwa kafelki z właściwej pary ortograficznej.
 - Każde kwalifikujące się wystąpienie w słowie tworzy osobne możliwe zadanie.
-- Po odpowiedzi zawsze widoczny jest pełny poprawny zapis i jednoznaczny komentarz.
+- Po odpowiedzi miejsce z luką jest zastępowane pełnym poprawnym słowem, a bezpośrednio pod nim pojawia się jednoznaczny komentarz, czy odpowiedź była dobra, czy błędna.
 - Wynik jest liczony na podstawie pierwszej i jedynej odpowiedzi na każde zadanie.
 - W podsumowaniu błędne pozycje występują przed poprawnymi; zachowywane są powtórzenia słowa wynikające z różnych zadań.
 - Historia zachowuje najwyżej 100 najnowszych wyników i nie opuszcza urządzenia.

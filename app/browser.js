@@ -100,9 +100,10 @@ kura`;
       if (button.dataset.answer === answer && !result.correct) button.classList.add('wrong');
     }
 
+    elements.word.textContent = task.word;
     elements.feedback.textContent = result.correct
-      ? `Dobrze! Poprawny zapis: ${task.word}.`
-      : `Niestety, to nie ten zapis. Poprawnie: ${task.word}.`;
+      ? 'Dobrze! To poprawna odpowiedź.'
+      : 'Niestety, odpowiedź jest błędna.';
     elements.feedback.classList.add(result.correct ? 'correct' : 'wrong');
     elements.feedback.hidden = false;
     elements.liveScore.textContent = `Poprawne: ${results.filter((item) => item.correct).length}`;

@@ -42,7 +42,7 @@
           word,
           missing,
           pair: [...PAIRS[missing]],
-          display: `${word.slice(0, index)}__${word.slice(index + original.length)}`,
+          display: `${word.slice(0, index)}_${word.slice(index + original.length)}`,
           index,
           length: original.length,
         });

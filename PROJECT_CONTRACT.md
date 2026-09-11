@@ -20,7 +20,7 @@ Zapewnić prostą, statyczną stronę do treningu polskiej ortografii na podstaw
 ## Stabilne zachowania — nie zmieniać bez zgody
 
 - Użytkownik zawsze wybiera sesję 10 albo 20 zadań.
-- W pojedynczym zadaniu ukryte jest dokładnie jedno wystąpienie.
+- W pojedynczym zadaniu ukryte jest dokładnie jedno wystąpienie, oznaczone jednym znakiem podkreślenia (`_`).
 - Dostępne są dokładnie dwa kafelki z właściwej pary ortograficznej.
 - Każde kwalifikujące się wystąpienie w słowie tworzy osobne możliwe zadanie.
 - Po odpowiedzi zawsze widoczny jest pełny poprawny zapis i jednoznaczny komentarz.

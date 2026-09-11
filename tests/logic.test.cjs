@@ -21,11 +21,11 @@ test('każde wystąpienie ó/u, ż/rz i h/ch tworzy osobne zadanie', () => {
   assert.deepEqual(
     tasks.map(({ word, missing, pair, display }) => ({ word, missing, pair, display })),
     [
-      { word: 'przejażdżka', missing: 'rz', pair: ['ż', 'rz'], display: 'p__ejażdżka' },
-      { word: 'przejażdżka', missing: 'ż', pair: ['ż', 'rz'], display: 'przeja__dżka' },
-      { word: 'przejażdżka', missing: 'ż', pair: ['ż', 'rz'], display: 'przejażd__ka' },
-      { word: 'Józek', missing: 'ó', pair: ['u', 'ó'], display: 'J__zek' },
-      { word: 'pachnący', missing: 'ch', pair: ['h', 'ch'], display: 'pa__nący' },
+      { word: 'przejażdżka', missing: 'rz', pair: ['ż', 'rz'], display: 'p_ejażdżka' },
+      { word: 'przejażdżka', missing: 'ż', pair: ['ż', 'rz'], display: 'przeja_dżka' },
+      { word: 'przejażdżka', missing: 'ż', pair: ['ż', 'rz'], display: 'przejażd_ka' },
+      { word: 'Józek', missing: 'ó', pair: ['u', 'ó'], display: 'J_zek' },
+      { word: 'pachnący', missing: 'ch', pair: ['h', 'ch'], display: 'pa_nący' },
     ],
   );
 });

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Prosty trening polskiej ortografii: ó/u, ż/rz i h/ch.">
+  <title>Ortografia — trening słów</title>
+  <link rel="stylesheet" href="./app/style.css">
+  <script defer src="./app/logic.js"></script>
+  <script defer src="./app/browser.js"></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">Nauka przez krótkie serie</p>
+      <h1>Ortografia</h1>
+      <p>Uzupełniaj słowa i obserwuj swoje postępy.</p>
+    </header>
+
+    <section id="setup-screen" class="panel" aria-labelledby="setup-heading">
+      <h2 id="setup-heading">Wybierz długość treningu</h2>
+      <p class="muted">Za każdym razem otrzymasz losowy zestaw zadań.</p>
+      <div class="session-options">
+        <button class="session-tile" type="button" data-count="10">
+          <strong>10</strong><span>słów</span>
+        </button>
+        <button class="session-tile" type="button" data-count="20">
+          <strong>20</strong><span>słów</span>
+        </button>
+      </div>
+      <p id="load-status" class="status" role="status">Wczytywanie listy słów…</p>
+    </section>
+
+    <section id="training-screen" class="panel" aria-labelledby="training-heading" hidden>
+      <div class="progress-row">
+        <span id="progress-label">Słowo 1 z 10</span>
+        <span id="live-score">Poprawne: 0</span>
+      </div>
+      <div class="progress-track" aria-hidden="true"><div id="progress-fill"></div></div>
+      <h2 id="training-heading" class="sr-only">Trening</h2>
+      <p id="word-with-gap" class="word-card" aria-live="polite"></p>
+      <p class="question-hint">Który zapis pasuje do słowa?</p>
+      <div id="answer-options" class="answer-options"></div>
+      <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+      <button id="next-button" class="primary-button" type="button" hidden>Dalej</button>
+    </section>
+
+    <section id="summary-screen" class="panel" aria-labelledby="summary-heading" hidden>
+      <p class="eyebrow">Koniec treningu</p>
+      <h2 id="summary-heading">Twój wynik</h2>
+      <p id="summary-score" class="summary-score"></p>
+
+      <div id="incorrect-section" class="review-block review-wrong">
+        <h3>Do przećwiczenia</h3>
+        <ul id="incorrect-list" class="word-list"></ul>
+      </div>
+      <div class="review-block review-correct">
+        <h3>Zapisane poprawnie</h3>
+        <ul id="correct-list" class="word-list"></ul>
+      </div>
+
+      <button id="restart-button" class="primary-button" type="button">Nowy trening</button>
+    </section>
+
+    <section class="panel history-panel" aria-labelledby="history-heading">
+      <div class="section-heading-row">
+        <div>
+          <p class="eyebrow">Ostatnie wyniki</p>
+          <h2 id="history-heading">Postępy</h2>
+        </div>
+        <button id="clear-history" class="text-button" type="button">Wyczyść historię</button>
+      </div>
+      <p class="muted">Wykres pokazuje procent poprawnych odpowiedzi z maksymalnie 100 treningów.</p>
+      <div class="chart-wrap">
+        <svg id="history-chart" viewBox="0 0 800 260" role="img" aria-label="Wykres wyników treningów"></svg>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

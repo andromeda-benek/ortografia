@@ -20,7 +20,9 @@ słup
 też
 włożył
 ważne
-kura`;
+kura
+wchodzić
+wychodzić`;
 
   const elements = {
     setup: document.querySelector('#setup-screen'),

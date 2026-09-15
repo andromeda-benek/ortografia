@@ -38,6 +38,19 @@ test('po odpowiedzi pokazuje pełne słowo, a pod nim komentarz oceniający odpo
   assert.match(browser, /Niestety, odpowiedź jest błędna\./);
 });
 
+test('lista źródłowa i awaryjna zawierają słowa wchodzić oraz wychodzić', () => {
+  const data = read('data/slowa.txt');
+  const browser = read('app/browser.js');
+  const fallbackMatch = browser.match(/const FALLBACK_WORDS = `([\s\S]*?)`;/);
+  assert.ok(fallbackMatch);
+  const fallbackWords = fallbackMatch[1].split(/\r?\n/);
+
+  for (const word of ['wchodzić', 'wychodzić']) {
+    assert.match(data, new RegExp(`^${word}$`, 'm'));
+    assert.ok(fallbackWords.includes(word));
+  }
+});
+
 test('kontroler pobiera edytowalną listę słów i używa wersjonowanego localStorage', () => {
   const browser = read('app/browser.js');
 
